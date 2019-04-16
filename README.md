@@ -4,7 +4,8 @@ getting started https://docs.sencha.com/extjs/6.7.0-CE/guides/getting_started/op
 
 # genrate ExtJS project 
 
-  `ext-gen app -i`
+ ```
+ext-gen app -i`
   
    `? would you like to see the defaults for package.json? Yes
    ? Would you like to create a package.json file with defaults? No
@@ -21,4 +22,5 @@ getting started https://docs.sencha.com/extjs/6.7.0-CE/guides/getting_started/op
    ? What type of License does this project need? none
    ? What is the URL to submit bugs? https://github.com/medmedchiheb/extjs-demo/issues
    ? What is the Home Page URL? thinktank.de
-    `
+```
+
