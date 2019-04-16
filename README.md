@@ -6,9 +6,7 @@ getting started https://docs.sencha.com/extjs/6.7.0-CE/guides/getting_started/op
 
   `ext-gen app -i`
   
-  ` ext-gen app -i
-
-Sencha ExtGen v6.7.0 Community Edition - The Ext JS code generator
+`Sencha ExtGen v6.7.0 Community Edition - The Ext JS code generator
 
 ? would you like to see the defaults for package.json? Yes
 Defaults for Ext JS app:
@@ -75,8 +73,8 @@ for license terms.
 i [ext]: ext-gen: @sencha/ext v6.7.0 is installed
 i [ext]: ext-gen: @sencha/ext-modern-theme-base v6.7.0 is installed
 i [ext]: platform-install: @sencha/cmd v6.7.0 installed
-+ @sencha/cmd-windows@6.7.0
-added 5 packages from 3 contributors and audited 6 packages in 108.442s
++ @sencha/cmd-windows@6.7.0 ``
+`` added 5 packages from 3 contributors and audited 6 packages in 108.442s
 found 0 vulnerabilities
 
 i [ext]: platform-install: npm install -s @sencha/cmd-windows@6.7.0 installed
