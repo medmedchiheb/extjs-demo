@@ -2,6 +2,8 @@
 extjs demo app
 getting started https://docs.sencha.com/extjs/6.7.0-CE/guides/getting_started/open_tooling.html
 
+examples: https://examples.sencha.com/extjs/6.7.0/examples/kitchensink/?modern#all
+
 # genrate ExtJS project 
 
  ```
