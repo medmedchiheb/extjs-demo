@@ -26,3 +26,31 @@ ext-gen app -i`
    ? What is the Home Page URL? thinktank.de
 ```
 
+default startup
+
+```
+Welcome to the Ext JS 6.7 Modern Desktop Template Application! 
+
+This template has the standard architecture for a desktop application 
+- header and footer with custom buttons and text 
+- left-side collapsable menu with custom area on top of menu 
+- right-side (optional) detail view 
+- Single Page Application (spa) routing (note # in URL) 
+- Each View (menu) isolated into its own folder (under the 'view' folder) 
+- These files: View, View scss file, ViewController, ViewModel (called a ViewPackage) 
+
+Notice that the menu allows you to select from several views, 
+- Home (the view you are currently on) 
+- Personnel 
+
+select the personnel menu item to see an example of a page with an Ext JS grid 
+
+To build a new ViewPackage, type the following in a command window: 
+- ext-gen viewpackage employee (shortcut: ext vp employee) 
+
+Simple Theming: 
+
+- go to 'app/desktop/sass/var.scss', uncomment one of the $base-color variables 
+- more adventurous? go to 'app/shared/sass/var.scss' and uncomment all the lines
+
+```
