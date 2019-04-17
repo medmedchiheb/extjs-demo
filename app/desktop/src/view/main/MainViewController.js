@@ -63,6 +63,18 @@ Ext.define('extjsApp.view.main.MainViewController', {
 		Ext.Viewport.add([{ xtype: 'loginview'}]);
 	},
 
+	toogleBtn: function () {
+		console.log('toogle btn');
+		var button = this.lookupReference('detailtoggle');
+		this.onHeaderViewDetailToggle(button);
+	},
+
+	onDisclosureTap: function () {
+		console.log('onDisclosureTap ');
+		
+		
+	}
+
 
 //	onActionsViewLogoutTap: function( ) {
 //		var vm = this.getViewModel();

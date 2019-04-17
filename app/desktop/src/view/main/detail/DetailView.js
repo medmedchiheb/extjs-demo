@@ -7,7 +7,12 @@ Ext.define('extjsApp.view.main.detail.DetailView', {
     {
       xtype: 'container', 
       style: 'background:white', 
-      html: '<div style="padding:10px;font-size:24px;">detailview</div>'
+      html: '<div style="padding:10px;font-size:24px;">Filter</div>'
     }
   ]
+  // },
+	// afterShow: function () {
+	// 	toogleBtn();
+	// }
+
 })

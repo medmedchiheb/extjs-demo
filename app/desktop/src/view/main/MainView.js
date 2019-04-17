@@ -15,5 +15,13 @@ Ext.define('extjsApp.view.main.MainView', {
 		{ xtype: 'footerview', reference: 'footerview', docked: 'bottom', bind: {height: '{footerview_height}'} },
 		{ xtype: 'centerview', reference: 'centerview' },
 		{ xtype: 'detailview', reference: 'detailview', docked: 'right',  bind: {width:  '{detailview_width}'}  },
-	]
+	],
+	afterShow: function () {
+			this.controller.toogleBtn();
+			// this.fireEvent('toogleBtn', this);
+			//this.toogleBtn();
+	}
+  
+	
+
 });

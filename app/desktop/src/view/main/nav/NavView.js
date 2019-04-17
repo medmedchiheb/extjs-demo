@@ -7,7 +7,7 @@ Ext.define('extjsApp.view.main.nav.NavView', {
 	tbar: {xtype: 'topview', height: 50},
 	items: [ 
 		{
-			xtype: 'menuview', 
+			xtype: 'search-list', 
 			reference: 'menuview', 
 			bind: {width: '{menuview_width}'}, 
 			listeners: { 
