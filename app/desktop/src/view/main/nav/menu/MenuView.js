@@ -5,7 +5,7 @@ Ext.define('extjsApp.view.nav.menu.MenuView', {
 	requires: [
 		'Ext.data.TreeStore',
 	],
-	scrollable: false,
+	scrollable: true,
 	bind: { 
 		store: '{menu}', 
 		micro: '{navCollapsed}' 
