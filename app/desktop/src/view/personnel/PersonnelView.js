@@ -8,19 +8,39 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	store: {type: 'personnelviewstore'},
 	columns: [
 		{ 
-			text: 'Name',
-			dataIndex: 'name',
+			text: 'ID',
+			dataIndex: 'id',
 			width: 100,
 			cell: {userCls: 'bold'}
 		},
-		{text: 'Email',dataIndex: 'email',width: 230},
+		{text: 'Title',dataIndex: 'title',width: 230},
 		{
-			text: 'Phone',
-			dataIndex: 'phone',
+			text: 'Descrpition',
+			dataIndex: 'description',
 			width: 150 
-		}
+		}, {
+				text: 'Time',
+				dataIndex: 'time',
+				width: 150 
+		}, {
+			text: 'User',
+			dataIndex: 'user',
+			width: 150 
+	     }, {
+			text: 'Status',
+			dataIndex: 'status',
+			width: 150 
+	     }, {
+			text: 'Valid',
+			dataIndex: 'valid',
+			width: 150 
+	     }
 	],
 	listeners: {
-		select: 'onItemSelected'
+		select: 'onItemSelected',
+		render: function() {
+			console.log('load dtata');
+			personnelviewstore.load();
+		}
 	}
 });

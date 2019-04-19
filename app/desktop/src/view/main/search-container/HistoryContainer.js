@@ -5,11 +5,7 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
   cls: 'detailview',
 
   items: [
-    {
-      xtype: 'list',
-
-
-    },
+  
     {
       xtype: 'list',
                         title: 'search History',

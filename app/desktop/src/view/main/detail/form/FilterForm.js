@@ -12,8 +12,8 @@ Ext.define('extjsApp.view.main.detail.form.FilterForm', {
     },
 
     buttons: [{
-        text: 'Disable fields',
-        bind: '{disabled ? "Enable fields" : "Disable fields"}',
+        text: 'Search',
+       // bind: '{disabled ? "Enable fields" : "Disable fields"}',
         handler: 'onDisableTap'
     }, {
         text: 'Reset',
