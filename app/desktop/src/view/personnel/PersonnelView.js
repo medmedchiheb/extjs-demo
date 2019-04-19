@@ -2,6 +2,7 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	extend: 'Ext.grid.Grid',
 	xtype: 'personnelview',
 	cls: 'personnelview',
+	reference: 'personnelview',	
 	requires: [],
 	controller: {type: 'personnelviewcontroller'},
 	viewModel: {type: 'personnelviewmodel'},
@@ -9,50 +10,50 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	columns: [
 		{ 
 			text: 'ID',
-			dataIndex: 'id',
+			dataIndex: 'ID',
 			width: 100,
 			cell: {userCls: 'bold'}
 		},
-		{text: 'Title',dataIndex: 'title',width: 230},
+		{text: 'Short description',dataIndex: 'short_description',width: 450},
 		{
-			text: 'Descrpition',
-			dataIndex: 'description',
+			text: 'Responsable',
+			dataIndex: 'Resp',
 			width: 150 
 		}, {
-				text: 'Time',
-				dataIndex: 'time',
+				text: 'Creator',
+				dataIndex: 'Creator',
 				width: 150 
 		}, {
-			text: 'User',
-			dataIndex: 'user',
-			width: 150 
-	     }, {
 			text: 'Status',
 			dataIndex: 'status',
 			width: 150 
 	     }, {
-			text: 'Valid',
-			dataIndex: 'valid',
-			width: 150 
+			text: 'Updated time',
+			dataIndex: 'ts_update',
+			width: 250 
 	     }
 	],
 	listeners: {
-		select: 'onItemSelected'
+		select: 'onItemSelected',
+		myEvent: 'onMyEvent'
 	
 	},
 	afterShow: function () {
-		console.log('afterShow');
-		var myStore = this.store;
+		let baseURL = 'http://192.168.0.78:8085/services/request/getJsonData/';
 
-		Ext.Ajax.request({
-			url: 'http://localhost:8080/',
-			success: function(resp) {
-				console.log('resp: ', resp);
-				var result = Ext.decode(resp.responseText);
-				myStore.getProxy().data = result;
-				myStore.load();
-			},
-		});
+		console.log('loading data');
+		var myStore = this.store;
+		myStore.load();
+
+		// Ext.Ajax.request({
+		// 	url: 'http://192.168.0.78:8085/services/request/getJsonData/1000532?param1=Ticket&param2=&param3=&param4=&param5=&param6=',
+		// 	success: function(resp) {
+		// 		console.log('resp: ', resp);
+		// 		var result = Ext.decode(resp.responseText);
+		// 		myStore.getProxy().data = result;
+		// 		myStore.load();
+		// 	},
+		// });
 		// this.fireEvent('toogleBtn', this);
 		//this.toogleBtn();
      }

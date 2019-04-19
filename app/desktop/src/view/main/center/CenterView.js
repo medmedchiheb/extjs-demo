@@ -5,7 +5,8 @@ Ext.define('extjsApp.view.main.center.CenterView', {
 	layout: 'card',
 	items: [
 		{
-			xtype: 'personnelview'
+			xtype: 'personnelview',
+			reference: 'personnelview'
 		}
 	]
 });

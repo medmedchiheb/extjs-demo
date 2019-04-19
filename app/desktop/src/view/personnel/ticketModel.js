@@ -2,31 +2,25 @@ Ext.define('extjsApp.view.personnel.TicketModel', {
     extend: 'Ext.data.Model',
 
     fields: [{
-        name: 'id',
+        name: 'ID',
         type: 'int'
     }, {
-        name: 'title',
+        name: 'Resp',
         type: 'string'
     },{
-        name: 'description',
-        type: 'string'
-    },{
-        name: 'time',
-        type: 'int'
-    },{
-        name: 'user',
+        name: 'Creator',
         type: 'string'
     },{
         name: 'status',
         type: 'string'
     },{
-        name: 'valid',
-        type: 'int'
-    }],
-    proxy: {
-        type: 'rest',
-        url : 'http://localhost:8080/tickets'
-    }
+        name: 'ts_update',
+        type: 'string'
+    }]
+    // proxy: {
+    //     type: 'rest',
+    //     url : 'http://localhost:8080/tickets'
+    // }
 
    
 });

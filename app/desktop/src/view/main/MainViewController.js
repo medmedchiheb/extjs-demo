@@ -67,6 +67,7 @@ Ext.define('extjsApp.view.main.MainViewController', {
 		console.log('toogle btn');
 		var button = this.lookupReference('detailtoggle');
 		this.onHeaderViewDetailToggle(button);
+
 	},
 
 	onDisclosureTap: function () {
@@ -74,6 +75,8 @@ Ext.define('extjsApp.view.main.MainViewController', {
 		
 		
 	}
+	
+	
 
 
 //	onActionsViewLogoutTap: function( ) {
