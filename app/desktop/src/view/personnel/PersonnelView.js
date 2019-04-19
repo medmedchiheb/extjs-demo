@@ -37,10 +37,25 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	     }
 	],
 	listeners: {
-		select: 'onItemSelected',
-		render: function() {
-			console.log('load dtata');
-			personnelviewstore.load();
-		}
-	}
+		select: 'onItemSelected'
+	
+	},
+	afterShow: function () {
+		console.log('afterShow');
+		var myStore = this.store;
+
+		Ext.Ajax.request({
+			url: 'http://localhost:8080/',
+			success: function(resp) {
+				console.log('resp: ', resp);
+				var result = Ext.decode(resp.responseText);
+				myStore.getProxy().data = result;
+				myStore.load();
+			},
+		});
+		// this.fireEvent('toogleBtn', this);
+		//this.toogleBtn();
+     }
+
+	
 });

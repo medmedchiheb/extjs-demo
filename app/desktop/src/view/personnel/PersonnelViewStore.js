@@ -2,7 +2,7 @@ Ext.define('extjsApp.view.personnel.TicketModel', {
 	extend: 'Ext.data.Store',
 	alias: 'store.personnelviewstore',
 	model: 'extjsApp.view.personnel.TicketModel',
-	autoLoad: true,
+	//autoLoad: true,
 
 	//data: { items: []},
 	proxy: {
