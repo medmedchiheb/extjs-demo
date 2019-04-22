@@ -6,6 +6,7 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	requires: [],
 	controller: {type: 'personnelviewcontroller'},
 	viewModel: {type: 'personnelviewmodel'},
+
 	store: {type: 'personnelviewstore'},
 	columns: [
 		{ 
@@ -36,14 +37,15 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	listeners: {
 		select: 'onItemSelected',
 		myEvent: 'onMyEvent'
-	
+
 	},
 	afterShow: function () {
-		let baseURL = 'http://192.168.0.78:8085/services/request/getJsonData/';
+		this.setMasked(false);
+		// let baseURL = 'http://192.168.0.78:8085/services/request/getJsonData/';
 
-		console.log('loading data');
-		var myStore = this.store;
-		myStore.load();
+		// console.log('loading data');
+		// var myStore = this.store;
+		// myStore.load();
 
 		// Ext.Ajax.request({
 		// 	url: 'http://192.168.0.78:8085/services/request/getJsonData/1000532?param1=Ticket&param2=&param3=&param4=&param5=&param6=',

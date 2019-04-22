@@ -74,6 +74,11 @@ Ext.define('extjsApp.view.main.MainViewController', {
 		console.log('onDisclosureTap ');
 		
 		
+	},
+	onMyEvent(view, data) {
+		console.log('mainview myevent, ', data);
+		var view = this.lookup('personnelview');
+		view.fireEvent('myEvent',view, data);
 	}
 	
 	

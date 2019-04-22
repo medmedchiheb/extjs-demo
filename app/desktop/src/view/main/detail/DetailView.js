@@ -7,6 +7,9 @@ Ext.define('extjsApp.view.main.detail.DetailView', {
   items: [
     {
       xtype: 'form-panel', 
+      listeners: {
+        myEvent: 'onMyEvent'
+      }
       // style: 'background:white', 
       // html: '<div style="padding:10px;font-size:24px;">Filter</div>'
     }

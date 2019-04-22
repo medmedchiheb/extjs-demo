@@ -6,7 +6,14 @@ Ext.define('extjsApp.view.main.center.CenterView', {
 	items: [
 		{
 			xtype: 'personnelview',
-			reference: 'personnelview'
+			reference: 'personnelview',
+			masked: {
+				xtype: 'loadmask',
+				message: 'loading...'
+			}
+			// listeners: {
+			// 	myEvent: 'onMyEvent'
+			// }
 		}
 	]
 });
