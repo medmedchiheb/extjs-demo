@@ -16,18 +16,28 @@ Ext.define('extjsApp.view.personnel.PersonnelViewController', {
 		console.log('muy evnet, ', data);
 		this.loadData(data.resp, data.creator, data.status, data.from, data.to);
 	},
-
-	loadData: function (resp, creator, status, from, to) {
-
-		var myStore = this.getView().store; //Ext.getStore("extjsApp.view.personnel.PersonnelStore");
-		var baseURl = "http://192.168.0.78:8085/services/request/getJsonData/1000532";
-
-		var endpoint = "?param1=Ticket&param2="+resp+"&param3="+creator+"&param4="+from+"&param5="+to+"&param6="+status;
+	onSelectHistoryEvent: function(view, data) {
+		console.log('onSelectHistoryEvent, ', data);
+		this.loadData('data.resp', 'data.creator', 'data.status', 'data.from', 'data.to', data.url);
+	},
+	loadData: function (resp, creator, status, from, to, url = '') {
+		var myStore = this.getView().store; 
+		var finalUrl = '' ;
+		if (url == '') {
+		//Ext.getStore("extjsApp.view.personnel.PersonnelStore");
+			var baseURl = "http://192.168.0.78:8085/services/request/getJsonData/1000532";
+	
+			var endpoint = "?param1=Ticket&param2="+resp+"&param3="+creator+"&param4="+from+"&param5="+to+"&param6="+status;
+			finalUrl =  baseURl+endpoint;
+		} else {
+            finalUrl = url;
+		}
+		
 		//myStore.load();
 		var view = this.getView();
 		view.mask(); //view.setMasked(true); 
 		Ext.Ajax.request({
-			url: baseURl+endpoint,
+			url: finalUrl,
 			success: function(resp) {
 				console.log('resp: ', resp);
 				var result = Ext.decode(resp.responseText);

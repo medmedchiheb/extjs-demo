@@ -15,7 +15,7 @@ Ext.define('extjsApp.view.main.MainView', {
 		{ xtype: 'footerview', reference: 'footerview', docked: 'bottom', bind: {height: '{footerview_height}'} },
 		{ xtype: 'centerview', reference: 'centerview' },
 		{ xtype: 'detailview', reference: 'detailview', docked: 'right',  bind: {width:  '{detailview_width}'}, 	listeners: {	myEvent: 'onMyEvent'}  },
-		{ xtype: 'historycontainer', reference: 'historycontainer', docked: 'left',  bind: {width:  '{detailview_width}'}  }
+		{ xtype: 'historycontainer', reference: 'historycontainer', docked: 'left',  bind: {width:  '{detailview_width}'}   }   
 
 	],
 	afterShow: function () {

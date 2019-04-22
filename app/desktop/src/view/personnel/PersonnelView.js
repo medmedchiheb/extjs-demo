@@ -36,7 +36,8 @@ Ext.define('extjsApp.view.personnel.PersonnelView',{
 	],
 	listeners: {
 		select: 'onItemSelected',
-		myEvent: 'onMyEvent'
+		myEvent: 'onMyEvent',
+		selectHistoryEvent: 'onSelectHistoryEvent'
 
 	},
 	afterShow: function () {

@@ -4,6 +4,7 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
   title: 'Search History',
   cls: 'detailview',
 
+
   items: [
   
     {
@@ -12,23 +13,46 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
                         emptyText: 'No Data Loaded',
                       
                         store: {
-                            fields: ['name'],
-                            data: [
-                                {name: 'Cowper'},
-                                {name: 'Everett'},
-                                {name: 'University'},
-                                {name: 'Forest'}
-                            ],
+                            fields: [ "id", "alias", "serviceId", "baseUrl","user", "name", "criterias"],
+                            proxy: {
+                              type: 'ajax',
+                              url: 'http://localhost:8080/search/MBJ',
+                              reader: {
+                                type: 'json',
+                                rootProperty: ''
+                              }
+                            },
+                            autoLoad : true,
+                            // data: [
+                            //     {name: 'Cowper'},
+                            //     {name: 'Everett'},
+                            //     {name: 'University'},
+                            //     {name: 'Forest'}
+                            // ],
                             listeners: {
                                 load: function() {
-                                    alert("load!")
+                                   var store = this;
+                                  Ext.Ajax.request({
+                                                  url: "http://localhost:8080/search/history/MBJ",
+                                                  success: function(resp) {
+                                                      console.log('resp: ', resp);
+                                                      var result = Ext.decode(resp.responseText);
+                                                      store.loadData(result);
+                                                    
+                                                  },
+                                                });
                                 }
                             }
                         },
-
-                        itemTpl: '{name}'
+                       
+                      listeners: {
+                        select: 'onSelect'
+                      },
+                      itemTpl: '{name}'
+                       
     }
   ]
+  
   // },
 	// afterShow: function () {
 	// 	toogleBtn();
