@@ -2,7 +2,7 @@ Ext.define('extjsApp.view.main.MainViewModel', {
 	extend: 'Ext.app.ViewModel',
 	alias: 'viewmodel.mainviewmodel',
 	data: {
-		name: 'extjsApp',
+		name: 'thinktank',
 		navCollapsed:       false,
 		navview_max_width:    300,
 		navview_min_width:     44,
@@ -36,6 +36,19 @@ Ext.define('extjsApp.view.main.MainViewModel', {
 
 				]
 			}
+		},
+		list: {
+			"type": "tree",
+			"root": {
+				"expanded": true,
+				"children": [
+          { "text": "search 1",  "xtype": "homeview", "leaf": true },
+					{ "text": "search 2", "xtype": "personnelview","leaf": true },
+					//add new items on the next line (from sencha-node generate viewpackage)
+
+				]
+			}
 		}
+
 	}
 });
