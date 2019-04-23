@@ -25,6 +25,9 @@ Ext.define('extjsApp.view.main.detail.form.FilterForm', {
     bind: {
         disabled: '{disabled}' // Will cascade down to all fields.
     },
+    listeners: {
+       selectItemEvF: 'selectItem'
+    },
     items: [{
         xtype: 'combobox',
         name: 'object',
