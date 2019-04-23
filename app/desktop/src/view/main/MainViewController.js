@@ -82,9 +82,14 @@ Ext.define('extjsApp.view.main.MainViewController', {
 	},
 
 	onSelect(view, item) {
-		console.log('item, ', item.data);
+		console.log(' onSelect item, ', item);
 		var view = this.lookup('personnelview');
-		view.fireEvent('selectHistoryEvent',view, item.data);
+		view.fireEvent('selectHistoryEvent',view, item);
+	},
+	onRefreshHisotry(view) {
+		console.log('refresh ');
+		var view = this.lookup('historycontainer');
+		view.fireEvent('refreshHistory',view);
 	}
 	
 

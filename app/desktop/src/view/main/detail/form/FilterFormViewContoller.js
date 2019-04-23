@@ -139,6 +139,7 @@ Ext.define('extjsApp.view.main.detail.form.FilterFormViewContoller', {
                 value: this.currentdata.status
             });
         
+            var parent = this;
 
             Ext.Ajax.request({
                 url: "http://localhost:8080/search",
@@ -150,6 +151,8 @@ Ext.define('extjsApp.view.main.detail.form.FilterFormViewContoller', {
                 success: function(transport){
                        // do something
                        Ext.Msg.alert("Success!", "Search saved!");
+                       var view = parent.getView();
+                       view.fireEvent('refreshHistory', view);
                 },
                 failure: function(transport){
                     Ext.Msg.alert("Error!", transport.responseText);

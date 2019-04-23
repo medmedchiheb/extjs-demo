@@ -8,7 +8,9 @@ Ext.define('extjsApp.view.main.detail.DetailView', {
     {
       xtype: 'form-panel', 
       listeners: {
-        myEvent: 'onMyEvent'
+        myEvent: 'onMyEvent',
+        refreshHistory: 'onRefreshHisotry'
+
       }
       // style: 'background:white', 
       // html: '<div style="padding:10px;font-size:24px;">Filter</div>'

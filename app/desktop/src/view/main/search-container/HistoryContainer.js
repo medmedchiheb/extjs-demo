@@ -3,6 +3,7 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
   xtype: 'historycontainer',
   title: 'Search History',
   cls: 'detailview',
+  controller: 'historycontroller',
 
 
   items: [
@@ -11,6 +12,7 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
       xtype: 'list',
                         title: 'search History',
                         emptyText: 'No Data Loaded',
+                        reference: 'historylist',
                       
                         store: {
                             fields: [ "id", "alias", "serviceId", "baseUrl","user", "name", "criterias"],
@@ -47,11 +49,15 @@ Ext.define('extjsApp.view.main.detail.HistoryContainer', {
                        
                       listeners: {
                         select: 'onSelect'
+                        
                       },
                       itemTpl: '{name}'
                        
     }
-  ]
+  ],
+   listeners: {
+    refreshHistory: 'onRefreshHistory'
+   },
   
   // },
 	// afterShow: function () {
