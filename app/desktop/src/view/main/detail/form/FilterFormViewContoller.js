@@ -173,6 +173,39 @@ Ext.define('extjsApp.view.main.detail.form.FilterFormViewContoller', {
 		// 		//myStore.load();
 		// 	},
 		// });
+    },
+
+    selectItem: function(view, item) {
+      console.log('Great listener working ', item);
+      
+      var resp,creator,status, to, from;
+
+      item.criterias.forEach( criteria => {
+           if (criteria.alias == 'Resp') {
+               resp = criteria.value;
+           }
+           if (criteria.alias == 'Creator') {
+            creator = criteria.value;
+           }
+           if (criteria.description == 'lower_than_ts_update') {
+            to = criteria.value;
+           }
+           if (criteria.description == 'greater_than_ts_update') {
+            from = criteria.value;
+           }
+           if (criteria.alias == 'status') {
+            status = criteria.value;
+           }
+      });
+     
+      this.lookupReference('resp').setValue(resp);
+      this.lookupReference('creator').setValue(creator);
+      this.lookupReference('status').setValue(status);
+      this.lookupReference('to').setValue(to); // because param4 < ts_update
+      this.lookupReference('from').setValue(from); // because param4 > ts_update
+      var data = {resp: resp, creator: creator, status: status, from: from, to: to};
+      console.log('data: ', data);
+      this.currentdata = data;
     }
     
 });
