@@ -11,7 +11,7 @@
 
     <artifactId>extjs-demo</artifactId>
     <packaging>war</packaging>
-    <name>extjs-demo</name>
+    <name>extjs-demo-app</name>
     <description>extjs-demo ::  Web Application</description>
 
     <build>
