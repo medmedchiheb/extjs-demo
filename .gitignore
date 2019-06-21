@@ -2,3 +2,6 @@
 /generatedFiles
 /cordova
 /node_modules
+/temp
+.project
+.settings
